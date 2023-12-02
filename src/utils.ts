@@ -9,7 +9,7 @@ export const getCurrentWeekDetails = (date: string) => {
   const weekStart = currentDate.clone().startOf('isoWeek');
   let days = [];
 
-  for (let i = 0; i <= 6; i++) {
+  for (let i = 0; i <= 5; i++) {
     days.push(moment(weekStart).add(i, 'days').format('YYYY-MM-DD'));
   }
 
