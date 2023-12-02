@@ -1,5 +1,7 @@
 import React from 'react';
-import {Text, View} from 'react-native';
+import {View} from 'react-native';
+import ProfilePic from '../../components/ProfilePic/ProfilePic.view';
+import Text from '../../components/Text/Text.view';
 import styles from './TimeTable.styles';
 
 interface TimeTableProps {}
@@ -10,7 +12,12 @@ const TimeTable: React.FC<TimeTableProps> = props => {
 
   return (
     <View style={styles.container}>
-      <Text>TimeTable</Text>
+      <View style={styles.headerView}>
+        <Text>TimeTable</Text>
+        <View>
+          <ProfilePic />
+        </View>
+      </View>
     </View>
   );
 };
