@@ -1,6 +1,7 @@
 import React from 'react';
 import {View} from 'react-native';
 import Text, {TextVariants} from '../../components/Text/Text.view';
+import {Strings} from '../../constants/strings';
 import styles from './TimeTable.styles';
 
 interface TimeTableProps {}
@@ -12,7 +13,7 @@ const TimeTable: React.FC<TimeTableProps> = props => {
   return (
     <View style={styles.container}>
       <View style={styles.headerView}>
-        <Text variant={TextVariants.Header1}>TimeTable</Text>
+        <Text variant={TextVariants.Header1}>{Strings.timeTable}</Text>
       </View>
     </View>
   );
