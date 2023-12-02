@@ -25,7 +25,7 @@ export const timetableData = [
       endTime: '1676980988000',
       backgroundColor: '#d32b9c',
       borderColor: '#c5a872',
-      isBreak: true,
+      isBreak: false,
     },
     {
       subjectName: 'English',
@@ -90,7 +90,7 @@ export const timetableData = [
       endTime: '1696011273000',
       backgroundColor: '#e9aca5',
       borderColor: '#79905f',
-      isBreak: true,
+      isBreak: false,
     },
     {
       subjectName: 'Math',
@@ -238,7 +238,7 @@ export const timetableData = [
       endTime: '1687427516000',
       backgroundColor: '#699af7',
       borderColor: '#47d6e8',
-      isBreak: true,
+      isBreak: false,
     },
     {
       subjectName: 'SSC',
@@ -294,7 +294,7 @@ export const timetableData = [
       endTime: '1683385670000',
       backgroundColor: '#1f7572',
       borderColor: '#2dd067',
-      isBreak: true,
+      isBreak: false,
     },
     {
       subjectName: 'SSC',
@@ -359,7 +359,7 @@ export const timetableData = [
       endTime: '1675347907000',
       backgroundColor: '#50648f',
       borderColor: '#c99f46',
-      isBreak: true,
+      isBreak: false,
     },
     {
       subjectName: 'SSC',
@@ -471,7 +471,7 @@ export const timetableData = [
       endTime: '1680744499000',
       backgroundColor: '#b99678',
       borderColor: '#52c390',
-      isBreak: true,
+      isBreak: false,
     },
     {
       subjectName: 'Physics',
