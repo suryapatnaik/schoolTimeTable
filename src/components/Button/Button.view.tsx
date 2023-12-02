@@ -12,13 +12,17 @@ const Button = (props: ButtonComponentProps) => {
         <TouchableOpacity
           onPress={onPress}
           style={styles.filledButtonContainer}>
-          <Text style={styles.filledButtonText}>{title}</Text>
+          <Text {...props.textProps} style={styles.filledButtonText}>
+            {title}
+          </Text>
         </TouchableOpacity>
       );
     case ButtonVariants.text:
       return (
         <TouchableOpacity onPress={onPress}>
-          <Text style={styles.buttonText}>{title}</Text>
+          <Text {...props.textProps} style={styles.buttonText}>
+            {title}
+          </Text>
         </TouchableOpacity>
       );
   }
