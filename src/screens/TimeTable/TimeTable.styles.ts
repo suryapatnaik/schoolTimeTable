@@ -17,6 +17,9 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     width: '100%',
   },
+  spacer: {
+    height: 12,
+  },
 });
 
 export default styles;
