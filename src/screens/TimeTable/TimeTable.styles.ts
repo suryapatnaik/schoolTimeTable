@@ -1,13 +1,14 @@
 import {StyleSheet} from 'react-native';
 
 const styles = StyleSheet.create({
-  container: {},
+  container: {
+    padding: 16,
+  },
   headerView: {
-    borderWidth: 1,
     flexDirection: 'row',
     justifyContent: 'space-between',
-    paddingHorizontal: 12,
     alignItems: 'center',
+    marginBottom: 12,
   },
 });
 
