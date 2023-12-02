@@ -15,6 +15,7 @@ const WeekSelector: React.FC<WeekSelectorProps> = props => {
 
   const currentDay = useSelector(getCurrentDay);
   const {daysOfWeek, weekTitle} = getCurrentWeekDetails(currentDay);
+  console.log(daysOfWeek);
 
   const onPressNext = () => {};
 

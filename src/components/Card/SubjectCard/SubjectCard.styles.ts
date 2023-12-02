@@ -16,6 +16,13 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
   },
+  timesView: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  clockIcon: {
+    marginRight: 5,
+  },
 });
 
 export default styles;

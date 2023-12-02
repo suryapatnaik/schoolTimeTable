@@ -13,12 +13,14 @@ import styles from './TimeTable.styles';
 
 interface TimeTableProps {}
 
+const Spacer = () => <View style={styles.spacer} />;
+
 /**  */
 const TimeTable: React.FC<TimeTableProps> = props => {
   const {} = props;
 
   const currentDay = useSelector(getCurrentDay);
-  const {daysOfWeek, weekTitle} = getCurrentWeekDetails(currentDay);
+  const {daysOfWeek} = getCurrentWeekDetails(currentDay);
 
   return (
     <View style={styles.container}>
@@ -40,7 +42,7 @@ const TimeTable: React.FC<TimeTableProps> = props => {
 
       <FlatList
         data={timetableData[0]}
-        ItemSeparatorComponent={() => <View style={{height: 12}} />}
+        ItemSeparatorComponent={Spacer}
         renderItem={({item}) => <SubjectCard {...item} />}
       />
     </View>
