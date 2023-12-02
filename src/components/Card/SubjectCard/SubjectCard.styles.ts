@@ -18,6 +18,10 @@ const styles = StyleSheet.create({
   },
   timesView: {
     flexDirection: 'row',
+    alignItems: 'center',
+  },
+  clockIcon: {
+    marginRight: 5,
   },
 });
 

@@ -1,10 +1,11 @@
 import * as React from 'react';
 import Svg, {Path, SvgProps} from 'react-native-svg';
+import COLORS from '../../constants/colors';
 
 const ClockIcon = (props: SvgProps) => (
   <Svg width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}>
     <Path
-      stroke="#000"
+      stroke={COLORS.grey300}
       strokeLinecap="round"
       strokeLinejoin="round"
       strokeWidth={2}

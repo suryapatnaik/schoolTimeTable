@@ -1,6 +1,7 @@
 import moment from 'moment';
 import React, {ReactNode} from 'react';
 import {ColorValue, View} from 'react-native';
+import ClockIcon from '../../../assets/icons/Clock';
 import Text, {TextVariants} from '../../Text/Text.view';
 import styles from './SubjectCard.styles';
 
@@ -30,6 +31,7 @@ const SubjectCard = (props: SubjectCardProps) => {
         <Text variant={TextVariants.Header3}>{subjectName}</Text>
       </View>
       <View style={styles.timesView}>
+        <ClockIcon height={20} width={20} style={styles.clockIcon} />
         <Text variant={TextVariants.Header3}>
           {moment(startTime).format('HH:mm')}
         </Text>
