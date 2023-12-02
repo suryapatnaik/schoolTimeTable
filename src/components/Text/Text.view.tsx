@@ -27,6 +27,15 @@ const Text = (props: CTextProps) => {
     case TextVariants.Header1:
       textStyle = styles.header1;
       break;
+    case TextVariants.Header2:
+      textStyle = styles.header2;
+      break;
+    case TextVariants.Header3:
+      textStyle = styles.header3;
+      break;
+    case TextVariants.Header4:
+      textStyle = styles.header4;
+      break;
     default:
       textStyle = styles.header1;
   }
