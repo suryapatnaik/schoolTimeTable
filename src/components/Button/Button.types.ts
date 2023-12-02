@@ -1,4 +1,5 @@
 import {ButtonProps} from 'react-native';
+import {TextProps} from '../Text/Text.types';
 
 export enum ButtonVariants {
   filled = 'filled',
@@ -7,4 +8,5 @@ export enum ButtonVariants {
 
 export interface ButtonComponentProps extends ButtonProps {
   variant: ButtonVariants;
+  textProps: TextProps;
 }
