@@ -13,13 +13,13 @@ export enum TextVariants {
 }
 
 interface CTextProps extends TextProps {
-  variant: TextVariants;
+  variant?: TextVariants;
   color?: COLORS;
   textProps?: TextProps;
 }
 
 const Text = (props: CTextProps) => {
-  const {children, textProps, variant, color} = props;
+  const {children, textProps, variant = TextVariants.Header1, color} = props;
 
   let textStyle: StyleProp<TextStyle>;
 
