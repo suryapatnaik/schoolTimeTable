@@ -2,7 +2,10 @@ import React from 'react';
 
 import {FlatList, SafeAreaView, View} from 'react-native';
 import TimeTable from './src/screens/TimeTable/TimeTable.view';
-import DayCard from './src/components/Card/DayCard/DayCard';
+import DayCard from './src/components/Card/DayCard/DayCard.view';
+import SubjectCard from './src/components/Card/SubjectCard/SubjectCard.view';
+import Text from './src/components/Text/Text.view';
+import {timetableData} from './src/data';
 
 const App: React.FC = () => {
   return (
@@ -13,6 +16,11 @@ const App: React.FC = () => {
           <DayCard date={new Date()} isSelected={itm === 3} />
         ))}
       </View>
+      <FlatList
+        data={timetableData[0]}
+        ItemSeparatorComponent={() => <View style={{height: 12}} />}
+        renderItem={({item}) => <SubjectCard {...item} />}
+      />
     </SafeAreaView>
   );
 };
