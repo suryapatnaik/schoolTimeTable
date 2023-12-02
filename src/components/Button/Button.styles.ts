@@ -10,9 +10,11 @@ const styles = StyleSheet.create({
   },
   filledButtonText: {
     color: COLORS.white,
+    fontSize: 12,
   },
   buttonText: {
     color: COLORS.primaryBlue,
+    fontSize: 12,
   },
 });
 
