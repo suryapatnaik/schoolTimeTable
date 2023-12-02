@@ -1,31 +1,49 @@
-import React from 'react';
-import {View} from 'react-native';
-import styles from './SubjectCard.styles';
-import {SubjectCardProps} from './SubjectCard.types';
-import Text, {TextVariants} from '../../Text/Text.view';
 import moment from 'moment';
+import React, {ReactNode} from 'react';
+import {ColorValue, View} from 'react-native';
+import Text, {TextVariants} from '../../Text/Text.view';
+import styles from './SubjectCard.styles';
+
+export interface SubjectCardProps {
+  subjectName: String;
+  subjectIcon?: ReactNode;
+  startTime: Date;
+  endTime: Date;
+  backgroundColor: ColorValue;
+  borderColor: ColorValue;
+  isBreak: boolean;
+}
 
 const SubjectCard = (props: SubjectCardProps) => {
-  const {subjectIcon} = props;
-  const SubjectIcon = subjectIcon;
+  const {
+    subjectIcon,
+    backgroundColor,
+    borderColor,
+    endTime,
+    isBreak,
+    startTime,
+    subjectName,
+  } = props;
+
+  // const SubjectIcon = subjectIcon;
   return (
     <View
       style={styles.container(
-        props.backgroundColor + '33', // added 33 to hex value for 20% opacity
-        props.borderColor,
-        props.isBreak,
+        backgroundColor + '33', // added 33 to hex value for 20% opacity
+        borderColor,
+        isBreak,
       )}>
       <View style={styles.subjectContainer}>
-        {SubjectIcon ? <SubjectIcon /> : null}
-        <Text variant={TextVariants.Header3}>{props.subjectName}</Text>
+        {/* {SubjectIcon ? <SubjectIcon /> : null} */}
+        <Text variant={TextVariants.Header3}>{subjectName}</Text>
       </View>
       <View style={{flexDirection: 'row'}}>
         <Text variant={TextVariants.Header3}>
-          {moment(props.startTime).format('HH:mm')}
+          {moment(startTime).format('HH:mm')}
         </Text>
         <Text variant={TextVariants.Header3}>{' - '}</Text>
         <Text variant={TextVariants.Header3}>
-          {moment(props.endTime).format('HH:mm')}
+          {moment(endTime).format('HH:mm')}
         </Text>
       </View>
     </View>

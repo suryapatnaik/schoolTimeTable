@@ -1,10 +1,12 @@
 import React from 'react';
-import {View} from 'react-native';
+import {FlatList, View} from 'react-native';
 import {useSelector} from 'react-redux';
-import DayCard from '../../components/Card/DayCard/DayCard';
+import DayCard from '../../components/Card/DayCard/DayCard.view';
+import SubjectCard from '../../components/Card/SubjectCard/SubjectCard.view';
 import Text, {TextVariants} from '../../components/Text/Text.view';
 import WeekSelector from '../../components/WeekSelector/WeekSelector.view';
 import {Strings} from '../../constants/strings';
+import {timetableData} from '../../data';
 import {getCurrentDay} from '../../redux/Selectors';
 import {getCurrentWeekDetails} from '../../utils';
 import styles from './TimeTable.styles';
@@ -35,6 +37,12 @@ const TimeTable: React.FC<TimeTableProps> = props => {
           />
         ))}
       </View>
+
+      <FlatList
+        data={timetableData[0]}
+        ItemSeparatorComponent={() => <View style={{height: 12}} />}
+        renderItem={({item}) => <SubjectCard {...item} />}
+      />
     </View>
   );
 };
