@@ -19,7 +19,7 @@ interface CTextProps extends TextProps {
 }
 
 const Text = (props: CTextProps) => {
-  const {children, textProps, variant} = props;
+  const {children, textProps, variant, color} = props;
 
   let textStyle: StyleProp<TextStyle>;
 
@@ -41,7 +41,7 @@ const Text = (props: CTextProps) => {
   }
 
   return (
-    <RNText {...textProps} style={textStyle}>
+    <RNText {...textProps} style={[textStyle, color ? {color} : {}]}>
       {children}
     </RNText>
   );

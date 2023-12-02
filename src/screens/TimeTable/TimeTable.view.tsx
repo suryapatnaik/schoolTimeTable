@@ -1,6 +1,7 @@
 import React from 'react';
 import {View} from 'react-native';
 import Text, {TextVariants} from '../../components/Text/Text.view';
+import WeekSelector from '../../components/WeekSelector/WeekSelector.view';
 import {Strings} from '../../constants/strings';
 import styles from './TimeTable.styles';
 
@@ -15,6 +16,8 @@ const TimeTable: React.FC<TimeTableProps> = props => {
       <View style={styles.headerView}>
         <Text variant={TextVariants.Header1}>{Strings.timeTable}</Text>
       </View>
+
+      <WeekSelector />
     </View>
   );
 };
