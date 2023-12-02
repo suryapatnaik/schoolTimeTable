@@ -3,9 +3,11 @@ import COLORS from '../../constants/colors';
 
 const styles = StyleSheet.create({
   filledButtonContainer: {
-    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
     paddingVertical: 8,
     paddingHorizontal: 16,
+    borderRadius: 4,
     backgroundColor: COLORS.primaryBlue,
   },
   filledButtonText: {
