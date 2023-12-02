@@ -1,6 +1,7 @@
 import React from 'react';
-
-import {FlatList, SafeAreaView, View} from 'react-native';
+import {SafeAreaView} from 'react-native';
+import {Provider} from 'react-redux';
+import Store from './src/redux/Store';
 import TimeTable from './src/screens/TimeTable/TimeTable.view';
 import DayCard from './src/components/Card/DayCard/DayCard.view';
 import SubjectCard from './src/components/Card/SubjectCard/SubjectCard.view';

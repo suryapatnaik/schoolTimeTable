@@ -1,8 +1,7 @@
 import React from 'react';
-import {Text as RNText, StyleProp, TextStyle} from 'react-native';
+import {Text as RNText, StyleProp, TextProps, TextStyle} from 'react-native';
 import COLORS from '../../constants/colors';
 import styles from './Text.style';
-import {TextProps} from './Text.types';
 
 /** controls font size and family */
 export enum TextVariants {

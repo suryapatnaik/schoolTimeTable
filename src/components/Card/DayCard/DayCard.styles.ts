@@ -9,7 +9,7 @@ const styles = StyleSheet.create({
   },
   container: {
     alignItems: 'center',
-    backgroundColor: COLORS.grey,
+    backgroundColor: COLORS.grey100,
     padding: 12,
     borderRadius: 48,
   },
