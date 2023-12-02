@@ -1,4 +1,4 @@
-export const timetableData = [
+export const TimetableData = [
   [
     {
       subjectName: 'Physics',
