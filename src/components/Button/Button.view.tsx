@@ -1,16 +1,8 @@
-import {ButtonProps, TouchableOpacity} from 'react-native';
 import React from 'react';
-import styles from './Button.styles';
+import {TouchableOpacity} from 'react-native';
 import Text from '../Text/Text.view';
-
-export enum ButtonVariants {
-  filled = 'filled',
-  text = 'text',
-}
-
-interface ButtonComponentProps extends ButtonProps {
-  variant: ButtonVariants;
-}
+import styles from './Button.styles';
+import {ButtonComponentProps, ButtonVariants} from './Button.types';
 
 const Button = (props: ButtonComponentProps) => {
   const {title, variant = ButtonVariants.filled, onPress} = props;
@@ -24,7 +16,11 @@ const Button = (props: ButtonComponentProps) => {
         </TouchableOpacity>
       );
     case ButtonVariants.text:
-      return <Text style={styles.buttonText}>{title}</Text>;
+      return (
+        <TouchableOpacity onPress={onPress}>
+          <Text style={styles.buttonText}>{title}</Text>
+        </TouchableOpacity>
+      );
   }
 };
 
