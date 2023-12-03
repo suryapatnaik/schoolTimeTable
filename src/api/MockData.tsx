@@ -453,444 +453,444 @@ export const MockData: MockDataType[][] = [
   ],
   [
     {
-      startTime: '08:30 AM',
+      startTime: '08:30',
       subjectName: 'English',
 
       backgroundColor: "'#FFD700",
-      endTime: '09:00 AM',
+      endTime: '09:00',
       isBreak: false,
     },
     {
-      startTime: '09:00 AM',
+      startTime: '09:00',
       subjectName: 'SSC',
 
       backgroundColor: '#98FB98',
-      endTime: '09:40 AM',
+      endTime: '09:40',
       isBreak: false,
     },
     {
-      startTime: '09:40 AM',
+      startTime: '09:40',
       subjectName: 'SSC',
 
       backgroundColor: '#87CEEB',
-      endTime: '10:20 AM',
+      endTime: '10:20',
       isBreak: false,
     },
     {
-      startTime: '10:20 AM',
+      startTime: '10:20',
       subjectName: 'Break',
 
       backgroundColor: '#FFB6C1',
-      endTime: '10:40 AM',
+      endTime: '10:40',
       isBreak: true,
     },
     {
-      startTime: '10:40 AM',
+      startTime: '10:40',
       subjectName: 'Physics',
 
       backgroundColor: '#FFA07A',
-      endTime: '11:20 AM',
+      endTime: '11:20',
       isBreak: false,
     },
     {
-      startTime: '11:20 AM',
+      startTime: '11:20',
       subjectName: 'PT',
 
       backgroundColor: '#00FA9A',
-      endTime: '11:40 AM',
+      endTime: '11:40',
       isBreak: false,
     },
     {
-      startTime: '11:40 AM',
+      startTime: '11:40',
       subjectName: 'Chemistry',
 
       backgroundColor: '#DDA0DD',
-      endTime: '12:10 PM',
+      endTime: '12:10',
       isBreak: false,
     },
     {
-      startTime: '12:10 PM',
+      startTime: '12:10',
       subjectName: 'Lunch Break',
 
       backgroundColor: '#FFE4B5',
-      endTime: '12:50 PM',
+      endTime: '12:50',
       isBreak: true,
     },
     {
-      startTime: '12:50 PM',
+      startTime: '12:50',
       subjectName: 'Math',
 
       backgroundColor: '#87CEFA',
-      endTime: '01:30 PM',
+      endTime: '01:30',
       isBreak: false,
     },
   ],
   [
     {
-      startTime: '08:30 AM',
+      startTime: '08:30',
       subjectName: 'SSC',
 
       backgroundColor: "'#FFD700",
-      endTime: '09:00 AM',
+      endTime: '09:00',
       isBreak: false,
     },
     {
-      startTime: '09:00 AM',
+      startTime: '09:00',
       subjectName: 'SSC',
 
       backgroundColor: '#98FB98',
-      endTime: '09:40 AM',
+      endTime: '09:40',
       isBreak: false,
     },
     {
-      startTime: '09:40 AM',
+      startTime: '09:40',
       subjectName: 'Zero Class',
 
       backgroundColor: '#87CEEB',
-      endTime: '10:20 AM',
+      endTime: '10:20',
       isBreak: false,
     },
     {
-      startTime: '10:20 AM',
+      startTime: '10:20',
       subjectName: 'Break',
 
       backgroundColor: '#FFB6C1',
-      endTime: '10:40 AM',
+      endTime: '10:40',
       isBreak: true,
     },
     {
-      startTime: '10:40 AM',
+      startTime: '10:40',
       subjectName: 'English',
 
       backgroundColor: '#FFA07A',
-      endTime: '11:20 AM',
+      endTime: '11:20',
       isBreak: false,
     },
     {
-      startTime: '11:20 AM',
+      startTime: '11:20',
       subjectName: 'Chemistry',
 
       backgroundColor: '#00FA9A',
-      endTime: '11:40 AM',
+      endTime: '11:40',
       isBreak: false,
     },
     {
-      startTime: '11:40 AM',
+      startTime: '11:40',
       subjectName: 'Math',
 
       backgroundColor: '#DDA0DD',
-      endTime: '12:10 PM',
+      endTime: '12:10',
       isBreak: false,
     },
     {
-      startTime: '12:10 PM',
+      startTime: '12:10',
       subjectName: 'Lunch Break',
 
       backgroundColor: '#FFE4B5',
-      endTime: '12:50 PM',
+      endTime: '12:50',
       isBreak: true,
     },
     {
-      startTime: '12:50 PM',
+      startTime: '12:50',
       subjectName: 'Math',
 
       backgroundColor: '#87CEFA',
-      endTime: '01:30 PM',
+      endTime: '01:30',
       isBreak: false,
     },
   ],
   [
     {
-      startTime: '08:30 AM',
+      startTime: '08:30',
       subjectName: 'Physics',
 
       backgroundColor: "'#FFD700",
-      endTime: '09:00 AM',
+      endTime: '09:00',
       isBreak: false,
     },
     {
-      startTime: '09:00 AM',
+      startTime: '09:00',
       subjectName: 'SSC',
 
       backgroundColor: '#98FB98',
-      endTime: '09:40 AM',
+      endTime: '09:40',
       isBreak: false,
     },
     {
-      startTime: '09:40 AM',
+      startTime: '09:40',
       subjectName: 'English',
 
       backgroundColor: '#87CEEB',
-      endTime: '10:20 AM',
+      endTime: '10:20',
       isBreak: false,
     },
     {
-      startTime: '10:20 AM',
+      startTime: '10:20',
       subjectName: 'Break',
 
       backgroundColor: '#FFB6C1',
-      endTime: '10:40 AM',
+      endTime: '10:40',
       isBreak: true,
     },
     {
-      startTime: '10:40 AM',
+      startTime: '10:40',
       subjectName: 'PT',
 
       backgroundColor: '#FFA07A',
-      endTime: '11:20 AM',
+      endTime: '11:20',
       isBreak: false,
     },
     {
-      startTime: '11:20 AM',
+      startTime: '11:20',
       subjectName: 'Math',
 
       backgroundColor: '#00FA9A',
-      endTime: '11:40 AM',
+      endTime: '11:40',
       isBreak: false,
     },
     {
-      startTime: '11:40 AM',
+      startTime: '11:40',
       subjectName: 'SSC',
 
       backgroundColor: '#DDA0DD',
-      endTime: '12:10 PM',
+      endTime: '12:10',
       isBreak: false,
     },
     {
-      startTime: '12:10 PM',
+      startTime: '12:10',
       subjectName: 'Lunch Break',
 
       backgroundColor: '#FFE4B5',
-      endTime: '12:50 PM',
+      endTime: '12:50',
       isBreak: true,
     },
     {
-      startTime: '12:50 PM',
+      startTime: '12:50',
       subjectName: 'SSC',
 
       backgroundColor: '#87CEFA',
-      endTime: '01:30 PM',
+      endTime: '01:30',
       isBreak: false,
     },
   ],
   [
     {
-      startTime: '08:30 AM',
+      startTime: '08:30',
       subjectName: 'English',
 
       backgroundColor: "'#FFD700",
-      endTime: '09:00 AM',
+      endTime: '09:00',
       isBreak: false,
     },
     {
-      startTime: '09:00 AM',
+      startTime: '09:00',
       subjectName: 'SSC',
 
       backgroundColor: '#98FB98',
-      endTime: '09:40 AM',
+      endTime: '09:40',
       isBreak: false,
     },
     {
-      startTime: '09:40 AM',
+      startTime: '09:40',
       subjectName: 'English',
 
       backgroundColor: '#87CEEB',
-      endTime: '10:20 AM',
+      endTime: '10:20',
       isBreak: false,
     },
     {
-      startTime: '10:20 AM',
+      startTime: '10:20',
       subjectName: 'Break',
 
       backgroundColor: '#FFB6C1',
-      endTime: '10:40 AM',
+      endTime: '10:40',
       isBreak: true,
     },
     {
-      startTime: '10:40 AM',
+      startTime: '10:40',
       subjectName: 'Chemistry',
 
       backgroundColor: '#FFA07A',
-      endTime: '11:20 AM',
+      endTime: '11:20',
       isBreak: false,
     },
     {
-      startTime: '11:20 AM',
+      startTime: '11:20',
       subjectName: 'Chemistry',
 
       backgroundColor: '#00FA9A',
-      endTime: '11:40 AM',
+      endTime: '11:40',
       isBreak: false,
     },
     {
-      startTime: '11:40 AM',
+      startTime: '11:40',
       subjectName: 'Chemistry',
 
       backgroundColor: '#DDA0DD',
-      endTime: '12:10 PM',
+      endTime: '12:10',
       isBreak: false,
     },
     {
-      startTime: '12:10 PM',
+      startTime: '12:10',
       subjectName: 'Lunch Break',
 
       backgroundColor: '#FFE4B5',
-      endTime: '12:50 PM',
+      endTime: '12:50',
       isBreak: true,
     },
     {
-      startTime: '12:50 PM',
+      startTime: '12:50',
       subjectName: 'English',
 
       backgroundColor: '#87CEFA',
-      endTime: '01:30 PM',
+      endTime: '01:30',
       isBreak: false,
     },
   ],
   [
     {
-      startTime: '08:30 AM',
+      startTime: '08:30',
       subjectName: 'SSC',
 
       backgroundColor: "'#FFD700",
-      endTime: '09:00 AM',
+      endTime: '09:00',
       isBreak: false,
     },
     {
-      startTime: '09:00 AM',
+      startTime: '09:00',
       subjectName: 'Physics',
 
       backgroundColor: '#98FB98',
-      endTime: '09:40 AM',
+      endTime: '09:40',
       isBreak: false,
     },
     {
-      startTime: '09:40 AM',
+      startTime: '09:40',
       subjectName: 'English',
 
       backgroundColor: '#87CEEB',
-      endTime: '10:20 AM',
+      endTime: '10:20',
       isBreak: false,
     },
     {
-      startTime: '10:20 AM',
+      startTime: '10:20',
       subjectName: 'Break',
 
       backgroundColor: '#FFB6C1',
-      endTime: '10:40 AM',
+      endTime: '10:40',
       isBreak: true,
     },
     {
-      startTime: '10:40 AM',
+      startTime: '10:40',
       subjectName: 'Zero Class',
 
       backgroundColor: '#FFA07A',
-      endTime: '11:20 AM',
+      endTime: '11:20',
       isBreak: false,
     },
     {
-      startTime: '11:20 AM',
+      startTime: '11:20',
       subjectName: 'Chemistry',
 
       backgroundColor: '#00FA9A',
-      endTime: '11:40 AM',
+      endTime: '11:40',
       isBreak: false,
     },
     {
-      startTime: '11:40 AM',
+      startTime: '11:40',
       subjectName: 'Math',
 
       backgroundColor: '#DDA0DD',
-      endTime: '12:10 PM',
+      endTime: '12:10',
       isBreak: false,
     },
     {
-      startTime: '12:10 PM',
+      startTime: '12:10',
       subjectName: 'Lunch Break',
 
       backgroundColor: '#FFE4B5',
-      endTime: '12:50 PM',
+      endTime: '12:50',
       isBreak: true,
     },
     {
-      startTime: '12:50 PM',
+      startTime: '12:50',
       subjectName: 'Zero Class',
 
       backgroundColor: '#87CEFA',
-      endTime: '01:30 PM',
+      endTime: '01:30',
       isBreak: false,
     },
   ],
   [
     {
-      startTime: '08:30 AM',
+      startTime: '08:30',
       subjectName: 'Math',
 
       backgroundColor: "'#FFD700",
-      endTime: '09:00 AM',
+      endTime: '09:00',
       isBreak: false,
     },
     {
-      startTime: '09:00 AM',
+      startTime: '09:00',
       subjectName: 'Math',
 
       backgroundColor: '#98FB98',
-      endTime: '09:40 AM',
+      endTime: '09:40',
       isBreak: false,
     },
     {
-      startTime: '09:40 AM',
+      startTime: '09:40',
       subjectName: 'Math',
 
       backgroundColor: '#87CEEB',
-      endTime: '10:20 AM',
+      endTime: '10:20',
       isBreak: false,
     },
     {
-      startTime: '10:20 AM',
+      startTime: '10:20',
       subjectName: 'Break',
 
       backgroundColor: '#FFB6C1',
-      endTime: '10:40 AM',
+      endTime: '10:40',
       isBreak: true,
     },
     {
-      startTime: '10:40 AM',
+      startTime: '10:40',
       subjectName: 'PT',
 
       backgroundColor: '#FFA07A',
-      endTime: '11:20 AM',
+      endTime: '11:20',
       isBreak: true,
     },
     {
-      startTime: '11:20 AM',
+      startTime: '11:20',
       subjectName: 'SSC',
 
       backgroundColor: '#00FA9A',
-      endTime: '11:40 AM',
+      endTime: '11:40',
       isBreak: false,
     },
     {
-      startTime: '11:40 AM',
+      startTime: '11:40',
       subjectName: 'Zero Class',
       backgroundColor: '#DDA0DD',
-      endTime: '12:10 PM',
+      endTime: '12:10',
       isBreak: false,
     },
     {
-      startTime: '12:10 PM',
+      startTime: '12:10',
       subjectName: 'Lunch Break',
 
       backgroundColor: '#FFE4B5',
-      endTime: '12:50 PM',
+      endTime: '12:50',
       isBreak: true,
     },
     {
-      startTime: '12:50 PM',
+      startTime: '12:50',
       subjectName: 'PT',
 
       backgroundColor: '#87CEFA',
-      endTime: '01:30 PM',
+      endTime: '01:30',
       isBreak: false,
     },
   ],
