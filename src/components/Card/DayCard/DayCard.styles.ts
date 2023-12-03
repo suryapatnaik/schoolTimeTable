@@ -42,6 +42,12 @@ const styles = StyleSheet.create({
     marginTop: 12,
     backgroundColor: COLORS.primaryBlue,
   },
+  blankMarker: {
+    borderRadius: 8,
+    width: 8,
+    height: 8,
+    marginTop: 12,
+  },
 });
 
 export default styles;

@@ -46,8 +46,19 @@ const DateSelectorModal: React.FC<DateSelectorModalProps> = props => {
   const [selectedDate, setSelectedDate] = useState(currentDate);
   const [allowSubmit, setAllowSubmit] = useState(false);
 
+  const enableOrDisableSubmit = (date: string) => {
+    const isSunday = moment(date).day() === 0;
+    if (isSunday) {
+      setAllowSubmit(false);
+    } else {
+      setAllowSubmit(true);
+    }
+  };
+
   const onPressToday = () => {
-    setSelectedDate(moment().format('YYYY-MM-DD'));
+    const dateToday = moment().format('YYYY-MM-DD');
+    enableOrDisableSubmit(dateToday);
+    setSelectedDate(dateToday);
   };
 
   const onPressCancel = () => {
@@ -56,14 +67,7 @@ const DateSelectorModal: React.FC<DateSelectorModalProps> = props => {
 
   const onSelectDate = (day: DateData) => {
     const {dateString} = day;
-
-    const isSunday = moment(dateString).day() === 0;
-
-    if (isSunday) {
-      setAllowSubmit(false);
-    } else {
-      setAllowSubmit(true);
-    }
+    enableOrDisableSubmit(dateString);
     setSelectedDate(day.dateString);
   };
 

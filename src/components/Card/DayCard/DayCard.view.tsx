@@ -35,7 +35,7 @@ const DayCard = (props: DayCardProps) => {
           </Text>
         </View>
       </View>
-      {isTodaysDate ? <View style={styles.marker} /> : null}
+      {isTodaysDate ? <View style={styles.marker} /> : <View style={styles.blankMarker} />}
     </TouchableOpacity>
   );
 };
