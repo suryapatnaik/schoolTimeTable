@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useRef, useState} from 'react';
 import {Dimensions, ScrollView, View} from 'react-native';
 import {useSelector} from 'react-redux';
 import {MockData} from '../../api/MockData';
@@ -19,6 +19,17 @@ const TimeTable: React.FC<TimeTableProps> = props => {
 
   const currentDay = useSelector(getCurrentDay);
   const {daysOfWeek} = getCurrentWeekDetails(currentDay);
+  const [currentPage, setCurrentPage] = useState('1');
+
+  const scrollRef: React.LegacyRef<ScrollView> = useRef(null);
+
+  const selectDate = (index: number) => {
+    setCurrentPage((index + 1).toString());
+    scrollRef.current?.scrollTo({
+      x: Dimensions.get('screen').width * 0.78 * index,
+      animated: true,
+    });
+  };
 
   return (
     <View style={styles.container}>
@@ -29,22 +40,24 @@ const TimeTable: React.FC<TimeTableProps> = props => {
       <WeekSelector />
 
       <View style={styles.weekDaysView}>
-        {daysOfWeek.map(item => (
+        {daysOfWeek.map((item, index) => (
           <DayCard
+            key={index}
             date={item}
-            isSelected={item === '2023-12-02'}
-            onPress={() => {}}
+            isSelected={(index + 1).toString() === currentPage}
+            onPress={() => selectDate(index)}
           />
         ))}
       </View>
 
       <ScrollView
+        ref={scrollRef}
         horizontal={true}
         decelerationRate={0}
         pagingEnabled={true}
         snapToInterval={Dimensions.get('screen').width * 0.82}
         scrollEventThrottle={16}
-        onScroll={event => {
+        onMomentumScrollEnd={event => {
           const scrollDistance = event.nativeEvent.contentOffset.x;
           const viewWidth = (Dimensions.get('screen').width * 0.78).toFixed(2);
           const pagesScrolled = (
@@ -52,22 +65,30 @@ const TimeTable: React.FC<TimeTableProps> = props => {
             1
           ).toFixed(0);
 
-          console.log(viewWidth, '----------------View width');
+          if (pagesScrolled !== currentPage) {
+            setCurrentPage(pagesScrolled);
+          }
 
-          console.log(
-            '--Scroll distance : ',
-            scrollDistance.toFixed(2),
-            '--Pages scrolled : ',
-            pagesScrolled,
-          );
+          // console.log(viewWidth, '----------------View width');
+
+          // console.log(
+          //   '--Scroll distance : ',
+          //   scrollDistance.toFixed(2),
+          //   '--Pages scrolled : ',
+          //   pagesScrolled,
+          // );
         }}
         snapToAlignment="center">
-        {MockData.map(data => (
+        {MockData.map((data, index) => (
           <ScrollView
+            key={`${index}${Math.random()}`}
             contentContainerStyle={styles.subjectsListContainer}
             showsVerticalScrollIndicator={false}>
             {data.map(subject => (
-              <SubjectCard {...subject} key={subject.startTime} />
+              <SubjectCard
+                {...subject}
+                key={`${subject.startTime}${subject.backgroundColor}`}
+              />
             ))}
           </ScrollView>
         ))}
