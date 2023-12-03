@@ -1,19 +1,17 @@
 import React from 'react';
-import {FlatList, View} from 'react-native';
+import {Dimensions, ScrollView, View} from 'react-native';
 import {useSelector} from 'react-redux';
+import {MockData} from '../../api/MockData';
 import DayCard from '../../components/Card/DayCard/DayCard.view';
 import SubjectCard from '../../components/Card/SubjectCard/SubjectCard.view';
 import Text, {TextVariants} from '../../components/Text/Text.view';
 import WeekSelector from '../../components/WeekSelector/WeekSelector.view';
 import {Strings} from '../../constants/strings';
-import {TimetableData} from '../../data';
 import {getCurrentDay} from '../../redux/Selectors';
 import {getCurrentWeekDetails} from '../../utils';
 import styles from './TimeTable.styles';
 
 interface TimeTableProps {}
-
-const Spacer = () => <View style={styles.spacer} />;
 
 /**  */
 const TimeTable: React.FC<TimeTableProps> = props => {
@@ -40,11 +38,40 @@ const TimeTable: React.FC<TimeTableProps> = props => {
         ))}
       </View>
 
-      <FlatList
-        data={TimetableData[0]}
-        ItemSeparatorComponent={Spacer}
-        renderItem={({item}) => <SubjectCard {...item} />}
-      />
+      <ScrollView
+        horizontal={true}
+        decelerationRate={0}
+        pagingEnabled={true}
+        snapToInterval={Dimensions.get('screen').width * 0.82}
+        scrollEventThrottle={16}
+        onScroll={event => {
+          const scrollDistance = event.nativeEvent.contentOffset.x;
+          const viewWidth = (Dimensions.get('screen').width * 0.78).toFixed(2);
+          const pagesScrolled = (
+            scrollDistance / parseInt(viewWidth, 10) +
+            1
+          ).toFixed(0);
+
+          console.log(viewWidth, '----------------View width');
+
+          console.log(
+            '--Scroll distance : ',
+            scrollDistance.toFixed(2),
+            '--Pages scrolled : ',
+            pagesScrolled,
+          );
+        }}
+        snapToAlignment="center">
+        {MockData.map(data => (
+          <ScrollView
+            contentContainerStyle={styles.subjectsListContainer}
+            showsVerticalScrollIndicator={false}>
+            {data.map(subject => (
+              <SubjectCard {...subject} key={subject.startTime} />
+            ))}
+          </ScrollView>
+        ))}
+      </ScrollView>
     </View>
   );
 };
