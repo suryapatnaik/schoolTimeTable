@@ -18,6 +18,7 @@ const TimeTable: React.FC<TimeTableProps> = props => {
   const {} = props;
 
   const currentDay = useSelector(getCurrentDay);
+
   const {daysOfWeek} = getCurrentWeekDetails(currentDay);
   const [currentPage, setCurrentPage] = useState('1');
 

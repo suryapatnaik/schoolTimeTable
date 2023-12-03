@@ -14,7 +14,7 @@ export const getCurrentWeekDetails = (date: string) => {
   }
 
   const startDate = moment(days[0]).format('Do MMM');
-  const endDate = moment(days[6]).format('Do MMM');
+  const endDate = moment(days[5]).format('Do MMM');
 
   return {
     daysOfWeek: days,
