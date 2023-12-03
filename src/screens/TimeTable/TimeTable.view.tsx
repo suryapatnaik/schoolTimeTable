@@ -1,14 +1,13 @@
 import React, {useRef, useState} from 'react';
 import {Dimensions, ScrollView, View} from 'react-native';
 import {useSelector} from 'react-redux';
-import {MockData} from '../../api/MockData';
 import DayCard from '../../components/Card/DayCard/DayCard.view';
 import SubjectCard from '../../components/Card/SubjectCard/SubjectCard.view';
 import DateSelectorModal from '../../components/DateSelectorModal/DateSelectorModal.view';
 import Text from '../../components/Text/Text.view';
 import WeekSelector from '../../components/WeekSelector/WeekSelector.view';
 import {Strings} from '../../constants/strings';
-import {getCurrentDay} from '../../redux/Selectors';
+import {getCurrentDay, getWeeksTimeTable} from '../../redux/Selectors';
 import {getCurrentWeekDetails} from '../../utils';
 import styles from './TimeTable.styles';
 
@@ -19,10 +18,11 @@ const TimeTable: React.FC<TimeTableProps> = props => {
   const {} = props;
 
   const currentDay = useSelector(getCurrentDay);
+  const timeTableData = useSelector(getWeeksTimeTable);
 
   const {daysOfWeek} = getCurrentWeekDetails(currentDay);
   const [currentPage, setCurrentPage] = useState('1');
-  const [showDateSelectorModal, setShowDateSelectorModal] = useState(true);
+  const [showDateSelectorModal, setShowDateSelectorModal] = useState(false);
 
   const scrollRef: React.LegacyRef<ScrollView> = useRef(null);
 
@@ -90,7 +90,7 @@ const TimeTable: React.FC<TimeTableProps> = props => {
           // );
         }}
         snapToAlignment="center">
-        {MockData.map((data, index) => (
+        {timeTableData.map((data, index) => (
           <ScrollView
             key={`${index}${Math.random()}`}
             contentContainerStyle={styles.subjectsListContainer}

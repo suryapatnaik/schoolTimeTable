@@ -1,4 +1,5 @@
 import moment from 'moment';
+import {subjectColors as SUBJECT_COLORS} from './constants/colors';
 
 /** Get all the days in a week for a given date
  * @param date in YYYY-MM-DD format
@@ -44,4 +45,25 @@ export const getPreviousWeeksFirstDay = (date: string) => {
     .subtract(1, 'week')
     .format('YYYY-MM-DD');
   return previousWeekFirstDay;
+};
+
+export const shuffleArray = <T>(array: T[]): T[] => {
+  const shuffledArray = [...array];
+
+  for (let i = shuffledArray.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffledArray[i], shuffledArray[j]] = [shuffledArray[j], shuffledArray[i]];
+  }
+
+  return shuffledArray;
+};
+
+/** get a random subject color */
+export const getRandomColor = (): string => {
+  const colorKeys = Object.keys(SUBJECT_COLORS);
+  const randomKey = colorKeys[
+    Math.floor(Math.random() * colorKeys.length)
+  ] as keyof typeof SUBJECT_COLORS;
+
+  return SUBJECT_COLORS[randomKey];
 };

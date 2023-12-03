@@ -8,4 +8,17 @@ enum COLORS {
   black = '#000',
 }
 
+export const subjectColors: Record<string, string> = {
+  Gold: '#FFD700',
+  PaleGreen: '#98FB98',
+  SkyBlue: '#87CEEB',
+  LightPink: '#FFB6C1',
+  LightSalmon: '#FFA07A',
+  MediumSpringGreen: '#00FA9A',
+  Plum: '#DDA0DD',
+  Moccasin: '#FFE4B5',
+  LightSkyBlue: '#87CEFA',
+  AnotherPaleGreen: '#98FB98',
+};
+
 export default COLORS;

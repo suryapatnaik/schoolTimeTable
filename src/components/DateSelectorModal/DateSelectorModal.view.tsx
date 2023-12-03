@@ -5,11 +5,15 @@ import {Calendar, DateData} from 'react-native-calendars';
 import {Theme} from 'react-native-calendars/src/types';
 import ReactNativeModal from 'react-native-modal';
 import {useDispatch, useSelector} from 'react-redux';
+import {Api, ENDPOINTS} from '../../api/Api';
 import COLORS from '../../constants/colors';
 import {FONTS} from '../../constants/common';
 import {Strings} from '../../constants/strings';
 import {getCurrentDay} from '../../redux/Selectors';
-import {setCurrentDate} from '../../redux/reducers/TimeTable.reducer';
+import {
+  setCurrentDate,
+  setTimeTableData,
+} from '../../redux/reducers/TimeTable.reducer';
 import {getCurrentWeekDetails} from '../../utils';
 import Button from '../Button/Button.view';
 import Text from '../Text/Text.view';
@@ -63,7 +67,12 @@ const DateSelectorModal: React.FC<DateSelectorModalProps> = props => {
     setSelectedDate(day.dateString);
   };
 
-  const onPressApply = () => {
+  const onPressApply = async () => {
+    const newTimeTableData = await Api.get(ENDPOINTS.getTimeTable, {
+      selectedDate,
+    });
+
+    dispatch(setTimeTableData(newTimeTableData));
     dispatch(setCurrentDate(selectedDate));
     closeModal();
   };

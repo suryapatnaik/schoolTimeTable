@@ -1,9 +1,13 @@
 import React from 'react';
 import {TouchableOpacity, View} from 'react-native';
 import {useDispatch, useSelector} from 'react-redux';
+import {Api, ENDPOINTS} from '../../api/Api';
 import ArrowIcon from '../../assets/icons/ArrowIcon';
 import {getCurrentDay} from '../../redux/Selectors';
-import {setCurrentDate} from '../../redux/reducers/TimeTable.reducer';
+import {
+  setCurrentDate,
+  setTimeTableData,
+} from '../../redux/reducers/TimeTable.reducer';
 import {
   getCurrentWeekDetails,
   getNextWeeksFirstDay,
@@ -24,14 +28,26 @@ const WeekSelector: React.FC<WeekSelectorProps> = props => {
   const weekDetails = getCurrentWeekDetails(currentDay);
   const dispatch = useDispatch();
 
-  const onPressNext = () => {
+  const onPressNext = async () => {
     const nextWeeksFirstDay = getNextWeeksFirstDay(currentDay);
+
+    const newTimeTableData = await Api.get(ENDPOINTS.getTimeTable, {
+      nextWeeksFirstDay,
+    });
+
     dispatch(setCurrentDate(nextWeeksFirstDay));
+    dispatch(setTimeTableData(newTimeTableData));
   };
 
-  const onPressPrevious = () => {
+  const onPressPrevious = async () => {
     const previousWeeksFirstDay = getPreviousWeeksFirstDay(currentDay);
+
+    const newTimeTableData = await Api.get(ENDPOINTS.getTimeTable, {
+      previousWeeksFirstDay,
+    });
+
     dispatch(setCurrentDate(previousWeeksFirstDay));
+    dispatch(setTimeTableData(newTimeTableData));
   };
 
   const onPressSelectWeek = () => {

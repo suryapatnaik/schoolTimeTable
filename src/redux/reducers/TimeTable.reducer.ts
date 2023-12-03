@@ -1,12 +1,16 @@
 import {createSlice, PayloadAction} from '@reduxjs/toolkit';
 import moment from 'moment';
+import {MockData, MockDataType} from '../../api/MockData';
 
 export type TimeTableState = {
   currentDate: string;
+  timeTableData: MockDataType[][];
 };
 
 export const INITIAL_STATE: TimeTableState = {
   currentDate: moment().format('YYYY-MM-DD'),
+  /** time table for the current week */
+  timeTableData: MockData.slice(0, 6),
 };
 
 export const TimeTable = createSlice({
@@ -17,9 +21,13 @@ export const TimeTable = createSlice({
       ...state,
       currentDate: action.payload,
     }),
+    setTimeTableData: (state, action: PayloadAction<MockDataType[][]>) => ({
+      ...state,
+      timeTableData: action.payload,
+    }),
   },
 });
 
-export const {setCurrentDate} = TimeTable.actions;
+export const {setCurrentDate, setTimeTableData} = TimeTable.actions;
 
 export default TimeTable.reducer;
