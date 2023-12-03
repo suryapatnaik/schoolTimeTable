@@ -7,7 +7,13 @@ import styles from './Text.style';
 export type TextVariants = 'Header1' | 'Header2' | 'Header3' | 'Header4';
 
 interface CTextProps extends TextProps {
-  variant?: 'Header1' | 'Header2' | 'Header3' | 'Header4' | 'Header5';
+  variant?:
+    | 'Header1'
+    | 'Header2'
+    | 'Header3'
+    | 'Header4'
+    | 'Header5'
+    | 'Header6';
   color?: COLORS;
   textProps?: TextProps;
 }
@@ -32,6 +38,9 @@ const Text = (props: CTextProps) => {
       break;
     case 'Header5':
       textStyle = styles.header5;
+      break;
+    case 'Header6':
+      textStyle = styles.header6;
       break;
     default:
       textStyle = styles.header1;

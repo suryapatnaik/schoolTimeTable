@@ -41,9 +41,9 @@ const SubjectCard = (props: SubjectCardProps) => {
 
       <View style={styles.timesView}>
         <ClockIcon height={20} width={20} style={styles.clockIcon} />
-        <Text variant="Header5">{startTime}</Text>
-        <Text variant="Header5">{' - '}</Text>
-        <Text variant="Header5">{endTime}</Text>
+        <Text variant="Header6">{startTime}</Text>
+        <Text variant="Header6">{' - '}</Text>
+        <Text variant="Header6">{endTime}</Text>
       </View>
     </View>
   );

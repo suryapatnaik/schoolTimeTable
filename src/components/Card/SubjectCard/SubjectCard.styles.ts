@@ -4,7 +4,7 @@ import COLORS from '../../../constants/colors';
 const styles = StyleSheet.create({
   container: {
     height: 70,
-    paddingHorizontal: 24,
+    paddingHorizontal: 10,
     borderRadius: 12,
     justifyContent: 'space-between',
     alignItems: 'center',
@@ -19,8 +19,8 @@ const styles = StyleSheet.create({
   timesView: {
     flexDirection: 'row',
     alignItems: 'center',
-    width: 185,
-    justifyContent: 'flex-end',
+    width: 120,
+    justifyContent: 'flex-start',
   },
   clockIcon: {
     marginRight: 5,
