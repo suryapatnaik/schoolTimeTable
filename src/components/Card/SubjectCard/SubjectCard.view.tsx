@@ -2,7 +2,7 @@ import React from 'react';
 import {View} from 'react-native';
 import {MockDataType} from '../../../api/MockData';
 import ClockIcon from '../../../assets/icons/ClockIcon';
-import Text, {TextVariants} from '../../Text/Text.view';
+import Text from '../../Text/Text.view';
 import styles from './SubjectCard.styles';
 
 export interface SubjectCardProps extends MockDataType {}
@@ -30,13 +30,13 @@ const SubjectCard = (props: SubjectCardProps) => {
         {SubjectIcon ? (
           <View style={styles.subjectIcon}>{SubjectIcon}</View>
         ) : null}
-        <Text variant={TextVariants.Header3}>{subjectName}</Text>
+        <Text variant="Header5">{subjectName}</Text>
       </View>
       <View style={styles.timesView}>
         <ClockIcon height={20} width={20} style={styles.clockIcon} />
-        <Text variant={TextVariants.Header3}>{startTime}</Text>
-        <Text variant={TextVariants.Header3}>{' - '}</Text>
-        <Text variant={TextVariants.Header3}>{endTime}</Text>
+        <Text variant="Header5">{startTime}</Text>
+        <Text variant="Header5">{' - '}</Text>
+        <Text variant="Header5">{endTime}</Text>
       </View>
     </View>
   );

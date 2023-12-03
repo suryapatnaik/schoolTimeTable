@@ -4,7 +4,8 @@ import {useSelector} from 'react-redux';
 import {MockData} from '../../api/MockData';
 import DayCard from '../../components/Card/DayCard/DayCard.view';
 import SubjectCard from '../../components/Card/SubjectCard/SubjectCard.view';
-import Text, {TextVariants} from '../../components/Text/Text.view';
+import DateSelectorModal from '../../components/DateSelectorModal/DateSelectorModal.view';
+import Text from '../../components/Text/Text.view';
 import WeekSelector from '../../components/WeekSelector/WeekSelector.view';
 import {Strings} from '../../constants/strings';
 import {getCurrentDay} from '../../redux/Selectors';
@@ -21,10 +22,11 @@ const TimeTable: React.FC<TimeTableProps> = props => {
 
   const {daysOfWeek} = getCurrentWeekDetails(currentDay);
   const [currentPage, setCurrentPage] = useState('1');
+  const [showDateSelectorModal, setShowDateSelectorModal] = useState(true);
 
   const scrollRef: React.LegacyRef<ScrollView> = useRef(null);
 
-  const selectDate = (index: number) => {
+  const onSelectDate = (index: number) => {
     setCurrentPage((index + 1).toString());
     scrollRef.current?.scrollTo({
       x: Dimensions.get('screen').width * 0.78 * index,
@@ -32,13 +34,21 @@ const TimeTable: React.FC<TimeTableProps> = props => {
     });
   };
 
+  const openDateSelectorModal = () => {
+    setShowDateSelectorModal(true);
+  };
+
+  const closeDateSelectorModal = () => {
+    setShowDateSelectorModal(false);
+  };
+
   return (
     <View style={styles.container}>
       <View style={styles.headerView}>
-        <Text variant={TextVariants.Header1}>{Strings.timeTable}</Text>
+        <Text variant="Header1">{Strings.timeTable}</Text>
       </View>
 
-      <WeekSelector />
+      <WeekSelector openDateSelector={openDateSelectorModal} />
 
       <View style={styles.weekDaysView}>
         {daysOfWeek.map((item, index) => (
@@ -46,7 +56,7 @@ const TimeTable: React.FC<TimeTableProps> = props => {
             key={index}
             date={item}
             isSelected={(index + 1).toString() === currentPage}
-            onPress={() => selectDate(index)}
+            onPress={() => onSelectDate(index)}
           />
         ))}
       </View>
@@ -94,6 +104,10 @@ const TimeTable: React.FC<TimeTableProps> = props => {
           </ScrollView>
         ))}
       </ScrollView>
+
+      {showDateSelectorModal ? (
+        <DateSelectorModal closeModal={closeDateSelectorModal} />
+      ) : null}
     </View>
   );
 };

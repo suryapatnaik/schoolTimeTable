@@ -1,43 +1,42 @@
-import moment from 'moment';
 import React from 'react';
 import {TouchableOpacity, View} from 'react-native';
 import {useDispatch, useSelector} from 'react-redux';
 import ArrowIcon from '../../assets/icons/ArrowIcon';
 import {getCurrentDay} from '../../redux/Selectors';
 import {setCurrentDate} from '../../redux/reducers/TimeTable.reducer';
-import {getCurrentWeekDetails} from '../../utils';
-import Text, {TextVariants} from '../Text/Text.view';
+import {
+  getCurrentWeekDetails,
+  getNextWeeksFirstDay,
+  getPreviousWeeksFirstDay,
+} from '../../utils';
+import Text from '../Text/Text.view';
 import styles from './WeekSelector.styles';
 
-interface WeekSelectorProps {}
+interface WeekSelectorProps {
+  openDateSelector: () => void;
+}
 
 /**  */
 const WeekSelector: React.FC<WeekSelectorProps> = props => {
-  const {} = props;
+  const {openDateSelector} = props;
 
   const currentDay = useSelector(getCurrentDay);
-  const {daysOfWeek, weekTitle} = getCurrentWeekDetails(currentDay);
+  const weekDetails = getCurrentWeekDetails(currentDay);
   const dispatch = useDispatch();
 
   const onPressNext = () => {
-    const nextWeekFirstDay = moment(currentDay)
-      .startOf('isoWeek')
-      .add(1, 'week')
-      .format('YYYY-MM-DD');
-
-    dispatch(setCurrentDate(nextWeekFirstDay));
+    const nextWeeksFirstDay = getNextWeeksFirstDay(currentDay);
+    dispatch(setCurrentDate(nextWeeksFirstDay));
   };
 
   const onPressPrevious = () => {
-    const previousWeekFirstDay = moment(currentDay)
-      .startOf('isoWeek')
-      .subtract(1, 'week')
-      .format('YYYY-MM-DD');
-
-    dispatch(setCurrentDate(previousWeekFirstDay));
+    const previousWeeksFirstDay = getPreviousWeeksFirstDay(currentDay);
+    dispatch(setCurrentDate(previousWeeksFirstDay));
   };
 
-  const onPressSelectWeek = () => {};
+  const onPressSelectWeek = () => {
+    openDateSelector();
+  };
 
   return (
     <View style={styles.container}>
@@ -49,7 +48,7 @@ const WeekSelector: React.FC<WeekSelectorProps> = props => {
         activeOpacity={0.6}
         style={styles.currentWeek}
         onPress={onPressSelectWeek}>
-        <Text variant={TextVariants.Header3}>{weekTitle}</Text>
+        <Text variant="Header4">{weekDetails.weekTitle}</Text>
       </TouchableOpacity>
 
       <TouchableOpacity style={styles.rightButton} onPress={onPressNext}>

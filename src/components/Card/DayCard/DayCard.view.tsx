@@ -2,7 +2,7 @@ import moment from 'moment';
 import React from 'react';
 import {TouchableOpacity, View} from 'react-native';
 import COLORS from '../../../constants/colors';
-import Text, {TextVariants} from '../../Text/Text.view';
+import Text from '../../Text/Text.view';
 import styles from './DayCard.styles';
 
 interface DayCardProps {
@@ -20,7 +20,7 @@ const DayCard = (props: DayCardProps) => {
     <TouchableOpacity onPress={onPress} style={styles.main}>
       <View style={isSelected ? styles.selectedContainer : styles.container}>
         <Text
-          variant={TextVariants.Header3}
+          variant="Header5"
           color={isSelected ? COLORS.white : COLORS.black}>
           {moment(date).format('ddd')}
         </Text>
@@ -29,7 +29,7 @@ const DayCard = (props: DayCardProps) => {
             isSelected ? styles.selectedDayContainer : styles.dayContainer
           }>
           <Text
-            variant={TextVariants.Header3}
+            variant="Header5"
             color={isSelected ? COLORS.primaryBlue : COLORS.black}>
             {moment(date).format('DD')}
           </Text>

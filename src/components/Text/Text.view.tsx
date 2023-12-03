@@ -4,36 +4,34 @@ import COLORS from '../../constants/colors';
 import styles from './Text.style';
 
 /** controls font size and family */
-export enum TextVariants {
-  Header1 = 'Header1',
-  Header2 = 'Header2',
-  Header3 = 'Header3',
-  Header4 = 'Header4',
-}
+export type TextVariants = 'Header1' | 'Header2' | 'Header3' | 'Header4';
 
 interface CTextProps extends TextProps {
-  variant?: TextVariants;
+  variant?: 'Header1' | 'Header2' | 'Header3' | 'Header4' | 'Header5';
   color?: COLORS;
   textProps?: TextProps;
 }
 
 const Text = (props: CTextProps) => {
-  const {children, textProps, variant = TextVariants.Header1, color} = props;
+  const {children, textProps, variant = 'Header1', color} = props;
 
   let textStyle: StyleProp<TextStyle>;
 
   switch (variant) {
-    case TextVariants.Header1:
+    case 'Header1':
       textStyle = styles.header1;
       break;
-    case TextVariants.Header2:
+    case 'Header2':
       textStyle = styles.header2;
       break;
-    case TextVariants.Header3:
+    case 'Header3':
       textStyle = styles.header3;
       break;
-    case TextVariants.Header4:
+    case 'Header4':
       textStyle = styles.header4;
+      break;
+    case 'Header5':
+      textStyle = styles.header5;
       break;
     default:
       textStyle = styles.header1;

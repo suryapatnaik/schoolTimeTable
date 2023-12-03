@@ -21,3 +21,27 @@ export const getCurrentWeekDetails = (date: string) => {
     weekTitle: `${startDate} - ${endDate}`,
   };
 };
+
+/** For a given date, returns the first day for the next week
+ * @param date in YYYY-MM-DD format
+ * @returns the first day of the next week in YYYY-MM-DD format
+ */
+export const getNextWeeksFirstDay = (date: string) => {
+  const nextDayOfWeek = moment(date)
+    .startOf('isoWeek')
+    .add(1, 'week')
+    .format('YYYY-MM-DD');
+  return nextDayOfWeek;
+};
+
+/** For a given date, returns the first day for the previous week
+ * @param date in YYYY-MM-DD format
+ * @returns the first day of the previous week in YYYY-MM-DD format
+ */
+export const getPreviousWeeksFirstDay = (date: string) => {
+  const previousWeekFirstDay = moment(date)
+    .startOf('isoWeek')
+    .subtract(1, 'week')
+    .format('YYYY-MM-DD');
+  return previousWeekFirstDay;
+};

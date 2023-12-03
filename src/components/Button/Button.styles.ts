@@ -10,13 +10,26 @@ const styles = StyleSheet.create({
     borderRadius: 4,
     backgroundColor: COLORS.primaryBlue,
   },
+  disabledButtonContainer: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingVertical: 8,
+    paddingHorizontal: 16,
+    borderRadius: 4,
+    opacity: 0.8,
+    backgroundColor: COLORS.grey300,
+  },
   filledButtonText: {
-    color: COLORS.white,
+    color: COLORS.primaryBlue,
     fontSize: 12,
   },
   buttonText: {
     color: COLORS.primaryBlue,
-    fontSize: 12,
+    fontWeight: '500',
+  },
+  linkButton: {
+    alignItems: 'center',
+    height: 30,
   },
 });
 

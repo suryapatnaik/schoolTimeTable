@@ -1,26 +1,64 @@
 import React from 'react';
-import {TouchableOpacity} from 'react-native';
+import {TextProps, TouchableOpacity} from 'react-native';
+import COLORS from '../../constants/colors';
 import Text from '../Text/Text.view';
 import styles from './Button.styles';
-import {ButtonComponentProps, ButtonVariants} from './Button.types';
+
+export type ButtonVariants = 'filled' | 'text' | 'disabled';
+
+export interface ButtonComponentProps {
+  variant: ButtonVariants;
+  textProps?: TextProps;
+  title: string;
+  onPress: () => void;
+}
 
 const Button = (props: ButtonComponentProps) => {
-  const {title, variant = ButtonVariants.filled, onPress} = props;
+  const {title, variant = 'filled', onPress} = props;
+
   switch (variant) {
-    case ButtonVariants.filled:
+    case 'filled':
       return (
         <TouchableOpacity
+          activeOpacity={0.7}
           onPress={onPress}
           style={styles.filledButtonContainer}>
-          <Text {...props.textProps} style={styles.filledButtonText}>
+          <Text
+            variant="Header4"
+            {...props.textProps}
+            style={styles.filledButtonText}
+            color={COLORS.white}>
             {title}
           </Text>
         </TouchableOpacity>
       );
-    case ButtonVariants.text:
+    case 'disabled':
       return (
-        <TouchableOpacity onPress={onPress}>
-          <Text {...props.textProps} style={styles.buttonText}>
+        <TouchableOpacity
+          activeOpacity={0.7}
+          onPress={onPress}
+          disabled={true}
+          style={styles.disabledButtonContainer}>
+          <Text
+            variant="Header4"
+            {...props.textProps}
+            style={styles.filledButtonText}
+            color={COLORS.white}>
+            {title}
+          </Text>
+        </TouchableOpacity>
+      );
+    case 'text':
+      return (
+        <TouchableOpacity
+          onPress={onPress}
+          style={styles.linkButton}
+          activeOpacity={0.6}>
+          <Text
+            variant="Header4"
+            {...props.textProps}
+            color={COLORS.primaryBlue}
+            style={styles.buttonText}>
             {title}
           </Text>
         </TouchableOpacity>
