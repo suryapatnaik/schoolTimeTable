@@ -1,5 +1,5 @@
 import React, {useRef, useState} from 'react';
-import {Dimensions, ScrollView, View} from 'react-native';
+import {Dimensions, NativeScrollEvent, NativeSyntheticEvent, ScrollView, View} from 'react-native';
 import {useSelector} from 'react-redux';
 import DayCard from '../../components/Card/DayCard/DayCard.view';
 import SubjectCard from '../../components/Card/SubjectCard/SubjectCard.view';
@@ -42,6 +42,19 @@ const TimeTable: React.FC<TimeTableProps> = props => {
     setShowDateSelectorModal(false);
   };
 
+  const handleScrollEvent = (event: NativeSyntheticEvent<NativeScrollEvent>) => {
+    const scrollDistance = event.nativeEvent.contentOffset.x;
+    const viewWidth = (Dimensions.get('screen').width * 0.78).toFixed(2);
+    const pagesScrolled = (
+      scrollDistance / parseInt(viewWidth, 10) +
+      1
+    ).toFixed(0);
+
+    if (pagesScrolled !== currentPage) {
+      setCurrentPage(pagesScrolled);
+    }
+  };
+
   return (
     <View style={styles.container}>
       <View style={styles.headerView}>
@@ -62,33 +75,14 @@ const TimeTable: React.FC<TimeTableProps> = props => {
       </View>
 
       <ScrollView
+        showsHorizontalScrollIndicator={false}
         ref={scrollRef}
         horizontal={true}
         decelerationRate={0}
         pagingEnabled={true}
         snapToInterval={Dimensions.get('screen').width * 0.82}
         scrollEventThrottle={16}
-        onMomentumScrollEnd={event => {
-          const scrollDistance = event.nativeEvent.contentOffset.x;
-          const viewWidth = (Dimensions.get('screen').width * 0.78).toFixed(2);
-          const pagesScrolled = (
-            scrollDistance / parseInt(viewWidth, 10) +
-            1
-          ).toFixed(0);
-
-          if (pagesScrolled !== currentPage) {
-            setCurrentPage(pagesScrolled);
-          }
-
-          // console.log(viewWidth, '----------------View width');
-
-          // console.log(
-          //   '--Scroll distance : ',
-          //   scrollDistance.toFixed(2),
-          //   '--Pages scrolled : ',
-          //   pagesScrolled,
-          // );
-        }}
+        onMomentumScrollEnd={handleScrollEvent}
         snapToAlignment="center">
         {timeTableData.map((data, index) => (
           <ScrollView

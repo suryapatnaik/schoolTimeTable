@@ -1,5 +1,6 @@
 import moment from 'moment';
 import {subjectColors as SUBJECT_COLORS} from './constants/colors';
+import {MockDataType} from './api/MockData';
 
 /** Get all the days in a week for a given date
  * @param date in YYYY-MM-DD format
@@ -47,7 +48,7 @@ export const getPreviousWeeksFirstDay = (date: string) => {
   return previousWeekFirstDay;
 };
 
-export const shuffleArray = <T>(array: T[]): T[] => {
+export const shuffleArray = (array: MockDataType[][]): MockDataType[][] => {
   const shuffledArray = [...array];
 
   for (let i = shuffledArray.length - 1; i > 0; i--) {

@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
   weekDaysView: {
     marginVertical: 16,
     flexDirection: 'row',
-    alignItems: 'flex-start',
+    alignItems: 'center',
     justifyContent: 'space-between',
     width: '100%',
   },
